@@ -66,7 +66,7 @@ jobs:
         tags: itachi1706/node-awscli:fermium-slim
   erbium:
     runs-on: ubuntu-latest
-    name: Erbium Image (Node.JS 17)
+    name: Erbium Image (Node.JS 12)
     steps:
     - uses: actions/checkout@v2
     - name: Login to DockerHub
