@@ -1,0 +1,84 @@
+
+   
+name: Build Dockerhub Images
+
+on:
+  push:
+    branches: [ master ]
+  schedule:
+    - cron: '0 4 * * 0'
+  workflow_dispatch:
+
+jobs:
+  current:
+    runs-on: ubuntu-latest
+    name: Current Image (Node.JS 17)
+    steps:
+    - uses: actions/checkout@v2
+    - name: Login to DockerHub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: Build and push Docker images
+      uses: docker/build-push-action@v2.5.0
+      with:
+        context: ./current/
+        file: ./current/Dockerfile
+        pull: true
+        push: true
+        tags: itachi1706/node-awscli:current-slim
+  gallium:
+    runs-on: ubuntu-latest
+    name: Gallium Image (Node.JS 16)
+    steps:
+    - uses: actions/checkout@v2
+    - name: Login to DockerHub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: Build and push Docker images
+      uses: docker/build-push-action@v2.5.0
+      with:
+        context: ./gallium/
+        file: ./gallium/Dockerfile
+        pull: true
+        push: true
+        tags: itachi1706/node-awscli:gallium-slim
+  fermium:
+    runs-on: ubuntu-latest
+    name: Fermium Image (Node.JS 14)
+    steps:
+    - uses: actions/checkout@v2
+    - name: Login to DockerHub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: Build and push Docker images
+      uses: docker/build-push-action@v2.5.0
+      with:
+        context: ./fermium/
+        file: ./fermium/Dockerfile
+        pull: true
+        push: true
+        tags: itachi1706/node-awscli:fermium-slim
+  erbium:
+    runs-on: ubuntu-latest
+    name: Erbium Image (Node.JS 17)
+    steps:
+    - uses: actions/checkout@v2
+    - name: Login to DockerHub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: Build and push Docker images
+      uses: docker/build-push-action@v2.5.0
+      with:
+        context: ./erbium/
+        file: ./erbium/Dockerfile
+        pull: true
+        push: true
+        tags: itachi1706/node-awscli:erbium-slim

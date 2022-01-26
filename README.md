@@ -2,7 +2,7 @@
 
 Basic Node.JS image with AWS CLI installed
 
-This contains all of the slim default builds only. Future builds will come into consideration later
+This contains all of the slim default builds for the latest LTS versions only. Future builds will come into consideration later
 
 
 | Version | Code Name |
