@@ -21,7 +21,7 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: Build and push Docker images
-      uses: docker/build-push-action@v2.5.0
+      uses: docker/build-push-action@v3.0.0
       with:
         context: ./current/
         file: ./current/Dockerfile
@@ -39,7 +39,7 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: Build and push Docker images
-      uses: docker/build-push-action@v2.5.0
+      uses: docker/build-push-action@v3.0.0
       with:
         context: ./gallium/
         file: ./gallium/Dockerfile
@@ -57,7 +57,7 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: Build and push Docker images
-      uses: docker/build-push-action@v2.5.0
+      uses: docker/build-push-action@v3.0.0
       with:
         context: ./fermium/
         file: ./fermium/Dockerfile
@@ -75,7 +75,7 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: Build and push Docker images
-      uses: docker/build-push-action@v2.5.0
+      uses: docker/build-push-action@v3.0.0
       with:
         context: ./erbium/
         file: ./erbium/Dockerfile
