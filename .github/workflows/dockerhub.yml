@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Current Image (Node.JS 17)
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3.1.0
     - name: Login to DockerHub
       uses: docker/login-action@v1
       with:
@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Gallium Image (Node.JS 16)
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3.1.0
     - name: Login to DockerHub
       uses: docker/login-action@v1
       with:
@@ -50,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Fermium Image (Node.JS 14)
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3.1.0
     - name: Login to DockerHub
       uses: docker/login-action@v1
       with:
@@ -68,7 +68,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Erbium Image (Node.JS 12)
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3.1.0
     - name: Login to DockerHub
       uses: docker/login-action@v1
       with:
